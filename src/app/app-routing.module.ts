@@ -5,6 +5,7 @@ import { RoleGuard } from './core/guards/role.guard';
 import { UserRoleGuard } from './core/guards/user-role.guard';
 import { MainhomeComponent } from './homepage/mainhome/mainhome.component';
 import { LoginComponent } from './login/pages/login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -26,19 +27,19 @@ const routes : Routes = [
   {
     path: "user",
     loadChildren: () => import("./user/user.module").then(m => m.UserModule),
-    //canActivate: [AuthGuard, UserRoleGuard]
+    canActivate: [AuthGuard, UserRoleGuard]
   },
   {
     path : "admin",
     loadChildren: () => import("./admin/admin.module").then(m => m.AdminModule),
-    //canActivate: [AuthGuard, RoleGuard]
+    canActivate: [AuthGuard, RoleGuard]
   },
   {
     path: "home",
     component: MainhomeComponent
   },
   {path: '**',
-   component: LoginComponent
+   component: PageNotFoundComponent
   }
 ]
 

@@ -20,7 +20,7 @@ export class CheckoutComponent implements OnInit {
   public itemTotalPrice : number = 0
   placeOrderData : any = []
   currentPendingOrders : any
- newPendingOrders : Order[] =[]
+  newPendingOrders : Order[] =[]
 
   public cartOrders : Order[] = [];
   public grandTotal: number = 0;
@@ -31,28 +31,27 @@ export class CheckoutComponent implements OnInit {
     private sharedService : SharedService) { }
 
   ngOnInit(): void {
-    this.sharedService.show();
+   
 
     this.userService.getCheckOutData().subscribe(data => {
       this.checkoutData = data
       this.checkoutOrder = this.checkoutData.checkouts
       console.log(this.checkoutOrder)
       
-      
+  //  getting the total price    
       for(let item of this.checkoutOrder){
         this.itemTotalPrice += item.price*item.quantity
         console.log(this.itemTotalPrice)
       }
     },
     ) 
-
-    
-    // this.cartOrders = this.userService.getcartItem();
-    // this.grandTotal = this.userService.getTotalPrice();
+    this.sharedService.show();
   }
 
   placeOrder(){
+    //get the checkout data
     let res1 = this.userService.getCheckOutData()
+    //get the existing pendingOrders
     let res2 = this.userService.getPendingOrder()
     forkJoin([res1, res2]).pipe(
       switchMap((data) =>{
@@ -61,38 +60,42 @@ export class CheckoutComponent implements OnInit {
             this.checkoutOrder = this.checkoutData.checkouts
             this.currentPendingData = data[1]
             this.currentPendingOrders = this.currentPendingData.pendingOrders
-            console.log(this.currentPendingOrders)   
-            console.log(this.checkoutOrder)
+           //if there is an existing data on pending orders page,
+           //the current checkout items will be added to the pending orders page
             if(this.currentPendingOrders.length !== 0){
               newPendingOrders = this.currentPendingOrders
                 this.checkoutOrder.forEach((order) => {
                   newPendingOrders.push(order)
                 })
               }else{
+                //if there is no existing pending orders,
+                //the checkout items will be placed in the pending orders page
                 newPendingOrders = this.checkoutOrder
               }
-             
-            console.log(newPendingOrders)
+        //API call for place orders      
         return this.userService.placeOrder(newPendingOrders)
       }),
       switchMap((data : any) =>{
-        console.log(data)
+        //after clicking the checkout button on the page,
+        //the items will be deleted on the checkout page
         return this.userService.deleteCheckout()
       }),
       switchMap((data) => {
+        this.router.navigate(["user/pending-orders"])
         return EMPTY
       }),
       catchError((err) => {
         if(err.status === 404){
          console.log(err.status)
         }
+        
         return EMPTY
       })
     ).subscribe()
     
-    this.router.navigate(["user/pending-orders"])
+    
   }
-
+  //this is to delete an item on the checkout page
   executeDeleteOrder(item : any){
     let newQuantity : any
     newQuantity = this.checkoutOrder
@@ -110,13 +113,10 @@ export class CheckoutComponent implements OnInit {
    this.userService.reloadCurrentRoute()
   }
 
+  //this is to delete all the items on the chekout page
   emptyCheckout(){
     this.userService.deleteCheckout().subscribe()
     this.userService.reloadCurrentRoute()
   }
-  // pendingOrders(checkOutList : Order[]){
-  //   this.userService.pendingOrders(checkOutList);
-  //   this.router.navigate(["user/pending-orders"])
-  // }
-
+  
 }

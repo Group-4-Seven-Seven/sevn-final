@@ -28,21 +28,11 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.sharedService.show();
-    
-
-    //TO SUBSCRIBE TO PRODUCT GETTER
-    // this.userService.getProducts()
-    // .subscribe(res => {
-    //   this.product = res;
-    //   this.grandTotal = this.userService.getTotalPrice();
-    // });
-
-
     this.userService.getCartData().subscribe((data) =>{
-      this.cartData = data
-      this.cartOrder = this.cartData.carts
-      console.log(this.cartOrder)
-      this.grandTotal = this.userService.getGrandTotal(this.cartOrder)
+    this.cartData = data
+    this.cartOrder = this.cartData.carts
+    console.log(this.cartOrder)
+    this.grandTotal = this.userService.getGrandTotal(this.cartOrder)
     })
 
     
@@ -60,7 +50,6 @@ export class CartComponent implements OnInit {
 
   //TO REMOVE ONE ITEM ON CART
   executeDeleteOrder(item : Products) {
-   // this.userService.removeCartItem(item);
    let newQuantity : any
    newQuantity = this.cartOrder
    newQuantity = newQuantity.filter((data : Order) =>{
@@ -77,7 +66,7 @@ export class CartComponent implements OnInit {
    this.userService.reloadCurrentRoute()
   }
 
-  //EJ's CHECKOUT FUNCTION
+  
   checkout(){
     let res1 = this.userService.getCartData()
     let res2 = this.userService.getCheckOut()
@@ -106,11 +95,12 @@ export class CartComponent implements OnInit {
         return this.userService.deleteCart()
       }),
       switchMap((data) =>{
+        this.router.navigate(["user/checkout"])
         return EMPTY
       })
     ).subscribe()
 
-    this.router.navigate(["user/checkout"])
+   
   }
 
   editQuantity(quantity : Order){
@@ -129,11 +119,6 @@ export class CartComponent implements OnInit {
    this.userService.reloadCurrentRoute()
   }
 
-  //Nica's CHECKOUT FUNCTION
-
-  // checkout(cartorder : Order[]) {
-  //   this.userService.checkOut(cartorder);
-  //   this.router.navigate(["user/checkout"])
-  // }
+ 
 
 }
