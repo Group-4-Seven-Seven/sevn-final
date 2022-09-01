@@ -1,35 +1,7 @@
-<p>signup works!</p>
-
-<form  [formGroup] = "signUpForm" (ngSubmit) = "signup()">
-    <div>
-        <input formControlName = "firstname" placeholder="First Name">
-    </div>
-    <div>
-        <input formControlName = "lastname" placeholder="Last Name">
-    </div>
-    <div>
-        <input formControlName = "gender" placeholder="Gender">
-    </div>
-    <div>
-        <input formControlName = "email" placeholder="Email">
-    </div>
-    <div>
-        <input formControlName = "password" placeholder="Password" type = "password">
-    </div>
-    <div>
-        <button type ="submit">Sign up</button>
-    </div>
-
-    <p>Already a member? <a routerLink = "/login">Login here</a></p>
-</form>
-
-
-
-<h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
 <div class="container" id="container">
 
 	<div class="form-container sign-up-container">
-		<form action="#">
+		<form  [formGroup] = "signUpForm" (ngSubmit) = "signup()">
 			<h1>Create Account</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -37,46 +9,50 @@
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>or use your email for registration</span>
-			<input type="text" placeholder="Name" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<button>Sign Up</button>
+
+				<div>
+					<input formControlName = "firstname" placeholder="First Name">
+				</div>
+				<div>
+					<input formControlName = "lastname" placeholder="Last Name">
+				</div>
+				<div>
+					<input formControlName = "gender" placeholder="Gender">
+				</div>
+				<div>
+					<input formControlName = "email" placeholder="Email">
+				</div>
+				<div>
+					<input formControlName = "password" placeholder="Password" type = "password">
+				</div>
+				<div>
+					<button class="signupbtn" type ="submit">Sign up</button>
+				</div>
 		</form>
 	</div>
-
-
-	<!-- <div class="form-container sign-in-container">
-		<form action="#">
-			<h1>Login</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your account</span>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
-		</form>
-	</div> -->
-
 
 	<div class="overlay-container">
+		<img src="assets/img/register.jpg" >
 
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
+		<!-- <div class="overlay">
+			<div class="overlay-panel">
+				<div class = "text">
+				<h1>Welcome Back to !</h1>
 				<p>To keep connected with us please login with your personal info</p>
-				<button id="signIn">Sign In</button>
+				<button id="signIn" (click)="LogIn()">Login In</button>
+			    </div>
 			</div>
+		</div> -->
 
-			<!-- <div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<p>Enter your personal details and start journey with us</p>
-				<button class="ghost" id="signUp">Sign Up</button>
-			</div> -->
-
-		</div>
 	</div>
+	
 </div>
+<div class = "text">
+	<h3>Welcome to</h3>
+	<h2 style = "font-family: Garamond, serif; margin-left: -458px;"><strong>S E V N</strong></h2>
+		<p>Enter your personal details and start journey with us</p>
+		<p>Already a member?</p>
+			</div>
+				<button class="loginbtn" id="signIn" (click)="LogIn()">
+			<i class="fa fa-long-arrow-left" aria-hidden="true" color = "white"></i> Log In Now</button>
+	

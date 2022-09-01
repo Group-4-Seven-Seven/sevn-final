@@ -1,71 +1,4 @@
-<!-- <mat-card>
-    <mat-card-content>
-      <div class="header">
-        <p>Sign Into Your Account </p>
-      </div>
-    <form [formGroup] = "loginForm" (ngSubmit) = "login()">
-        <div class="emailInput">
-            <mat-form-field class="full-width" appearance="outline">
-              <mat-label>Email</mat-label>
-              <input
-                formControlName="email"
-                matInput
-                placeholder="Enter email address" required
-              />
-              <mat-error *ngIf="!loginForm.controls['email'].valid">
-                  Email is required
-                </mat-error>
-                <mat-error *ngIf="loginForm.controls['email'].errors?.['email']">
-                  Invalid Email Format
-                </mat-error>
-            </mat-form-field>
-          </div>
-          <div>
-        <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Password</mat-label>
-          <input formControlName="password" matInput [type]=" hide ? 'password' : 'text'" required />
-          <button  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
-          [attr.aria-pressed]="hide" type = "button">
-          <mat-icon>
-              {{hide ? 'visibility_off' : 'visibility'}}
-          </mat-icon>
-      </button>
-      <mat-error *ngIf="!loginForm.controls['password'].valid">
-          Password is required
-        </mat-error>
-      </mat-form-field>
-        <span>
-          <a class="text-link" class="aLink" routerLink="/auth/forgot-password">Forgot Password?</a>
-        </span>
-      </div>
-   
-    <button type = "submit" class = "btns" mat-flat-button color="primary">Login</button>
-    <p>Not a member? <a routerLink = "/signup">Sign up now</a></p>
-</form>
-</mat-card-content>
-</mat-card>
-
-
-
-<h2>Weekly Coding Challenge #1: Sign in/up Form</h2> -->
 <div class="container" id="container">
-
-      <!-- <div class="form-container sign-up-container">
-        <form action="#">
-          <h1>Create Account</h1>
-          <div class="social-container">
-            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-          <span>or use your email for registration</span>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button>Sign Up</button>
-        </form>
-      </div> -->
-
 
       <div class="form-container sign-in-container">
         <form [formGroup] = "loginForm" (ngSubmit) = "login()">
@@ -77,34 +10,8 @@
           </div>
           <span>or use your account</span>
 
-          <!-- <div class="form-group">
-            <input formControlName="email" type="text" placeholder="Email" id="email" class="form-control"/> -->
-            <!-- <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger">
-              <div *ngIf="email?.errors?.['required']">
-                  Email is required
-              </div>
-              <div *ngIf="email?.errors?.['email']">
-                  Invalid email format
-              </div>
-          </div> -->
-          <!-- </div> -->
-
-          <!-- <div class="form-group">
-          <input formControlName="password" placeholder="Password" id="password" class="form-control" [type]=" hide ? 'password' : 'text'"  />
-          <i class="far fa-eye" style="margin-left: -30px; cursor: pointer;"
-          (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
-          [attr.aria-pressed]="hide" type = "button">{{hide ? 'visibility_off' : 'visibility'}}</i> -->
-          
-          <!-- <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="alert alert-danger">
-            <div *ngIf="password?.errors?.['required']">
-                Password is required
-            </div>
-          </div> -->
-          <!-- </div> -->
-
-<!--matformfield-->
-  <div class="emailInput">
-      <mat-form-field class="full-width" appearance="outline">
+  <div class="emailInput" style ="width:165%">
+      <mat-form-field class="full-width" appearance="outline" style ="width:250px">
         <mat-label>Email</mat-label>
         <input
           formControlName="email"
@@ -120,7 +27,7 @@
       </mat-form-field>
     </div>
     <div class = "passwordInput">
-  <mat-form-field class="full-width" appearance="outline">
+  <mat-form-field class="full-width" appearance="outline" style ="width:250px">
     <mat-label>Password</mat-label>
     <input formControlName="password" matInput [type]=" hide ? 'password' : 'text'" required />
     <button  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
@@ -136,9 +43,6 @@
 </div>
 <!--endofmatformfield-->
 
-
-
-
           <a routerLink="/signup">Forgot your password?</a>
           <button class="loginbtn">Log In</button>
         </form>
@@ -148,16 +52,12 @@
 	<div class="overlay-container" >
     <img src="assets/img/signin.jpg" height = 100%>
 
-		<!-- <div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				<button class="ghost" id="signIn">Sign In</button>
-			</div> -->
-
 			<div class="overlay-panel overlay-right">
 				<h1>Hello, Friend!</h1>
-				<p>Enter your personal details and start journey with us</p>
+        <h6>Welcome back to</h6>
+        <h2 style = "font-family: Garamond, serif;"><strong>S E V N </strong></h2>
+        
+				<p>To keep connected with us please login with your personal info</p>
         <p>Not a member yet?</p>
 				<button class="signupbtn" (click)="signUp()" id="signUp">Sign Up Now <i class="fa fa-long-arrow-right" aria-hidden="true" style = "color: white"></i></button>
         
