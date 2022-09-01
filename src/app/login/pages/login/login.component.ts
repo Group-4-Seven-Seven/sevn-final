@@ -39,77 +39,40 @@ export class LoginComponent implements OnInit {
     let status : any
     let account : User[]
     let activeStatus: any
-    // this.loginService.login(login.email, login.password).subscribe(res => {
-    //   body = {...res.body}
-    //   status = res.status
-    // if(status === 200){
-    //   alert("Login successful")
-    //   localStorage.setItem('token', body.accessToken)
-    // //   this.loginService.getUser(login.email).subscribe(data => {account = data})
-    // // //this.loginService.getUser(login.email).subscribe(data => console.log(data))
-    // //   // localStorage.setItem('userType', account.userType)
-    // //  console.log(account)
-    // }
-    // },
-    // (error) => {
-    //   if(error.status === 400){
-    //     alert("Wrong Email or Password. Please Try again!")
-    //   }
-    //   else{
-    //     alert("Something went wrong")
-    //   }
-    // }
-
-    // )
-    // if(localStorage.getItem('token')){
-    //   let account
-    //   this.loginService.getUser(login.email).subscribe(data => console.log(data))
-
-    // }
-
+    //calling the login API with user credentials
     this.loginService.login(login.email, login.password).pipe(
       switchMap((res)=>{
         body = {...res.body}
          status = res.status
-         console.log(status)
-          // localStorage.setItem('token', body.accessToken)
-          // return this.loginService.getUser(login.email)
-
           if(status == 200){
-          //  localStorage.setItem('token', body.accessToken)
+            //getting user details
              return this.loginService.getUser(login.email)
           }
-
-
-
-
         return EMPTY
       }),
       switchMap((data) =>{
         account = data
-
-
-        //localStorage.setItem('userType', account[0].userType)
+        //stored userID to be retreived by the service
           localStorage.setItem('userID', JSON.stringify(account[0].id))
+        //stored user email to be retreived by the profile page
           localStorage.setItem('account', account[0].email)
-        //  this.router.navigate(["user"])
-
-
-
-        return this.loginService.getActiveStatus(account[0].id)
+          return this.loginService.getActiveStatus(account[0].id)
       }),
       switchMap((data)=>{
         activeStatus = data
-        if(activeStatus.active){
+        //check if the user is deactivated by the admin
+        if(activeStatus.active && account[0].userType == "user"){
           localStorage.setItem('token', body.accessToken)
           localStorage.setItem('userType', account[0].userType)
           this.router.navigate(["user"])
-        }else{
-          alert("Your account is temporarily deacctivated!")
+        }else if(account[0].userType == "admin"){
+          localStorage.setItem('token', body.accessToken)
+          localStorage.setItem('userType', account[0].userType)
+          this.router.navigate(["admin"])
         }
-
-
-
+        else{
+          alert("Your account is temporarily deactivated!")
+        }
         return EMPTY
       }),
       catchError((err) => {

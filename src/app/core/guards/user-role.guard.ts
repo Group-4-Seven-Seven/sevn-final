@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 
@@ -7,13 +7,17 @@ import { AuthService } from '../services/auth.service';
   providedIn: 'root'
 })
 export class UserRoleGuard implements CanActivate {
-  constructor(private authService : AuthService){}
+  constructor(private authService : AuthService, private router : Router){}
   canActivate(){
 
     if(this.authService.isUser()){
       return true
+    }else{
+      alert("You cannot access this page!")
+      this.router.navigate(["admin"])
+      return false
     }
-    return false
+    
     
   }
   

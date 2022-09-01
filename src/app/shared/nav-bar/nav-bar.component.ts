@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/user/services/user.service';
 import { SharedService } from '../shared.service';
 
@@ -12,7 +13,8 @@ export class NavBarComponent implements OnInit {
   public totalItem : number = 0;
 
   constructor(private userService: UserService,
-              public sharedService : SharedService) { }
+              public sharedService : SharedService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.cartbadge();
@@ -31,5 +33,10 @@ export class NavBarComponent implements OnInit {
     .subscribe(cart => {
       this.totalItem = cart.length;
     })
+  }
+
+  logout(){
+    localStorage.clear()
+    this.router.navigate(['/login'])
   }
 }
