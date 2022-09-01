@@ -6,8 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./admin-item.component.scss']
 })
 export class AdminItemComponent implements OnInit {
-  @Input() user : any
-  
+  @Input() user : any  
   @Input() status : any
   @Output() activeActionEmitter = new EventEmitter()
   @Output() userActionEmitter = new EventEmitter()
@@ -18,25 +17,13 @@ export class AdminItemComponent implements OnInit {
     
   }
 
-  activateUser(){
-    
+  //change active status
+  changeActiveStatus(){
     this.status = !this.status
     const active = {
       active : this.status
     }
     this.userActionEmitter.emit(this.user)
-    this.activeActionEmitter.emit(active)
-    
-  }
-
-  deactivateUser(){
-    this.status = !this.status
-    const active = {
-      active : this.status
-    }
-
-    this.userActionEmitter.emit(this.user)
-    this.activeActionEmitter.emit(active)
-    
+    this.activeActionEmitter.emit(active)   
   }
 }

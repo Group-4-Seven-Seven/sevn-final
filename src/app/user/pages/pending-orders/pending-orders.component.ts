@@ -23,9 +23,7 @@ export class PendingOrdersComponent implements OnInit {
 
   ngOnInit(): void {
     this.sharedService.show();
-    // this.checkoutOrders = this.userService.getcheckOutItems();
-    // this.grandTotal = this.userService.getTotalPrice();
-
+    //get pending orders from database and display it on the page 
     this.userService.getPendingOrder().subscribe(data => {
       this.pendingData = data
       this.pendingOrders = this.pendingData.pendingOrders
@@ -37,13 +35,11 @@ export class PendingOrdersComponent implements OnInit {
     this.userService.getSoldItems().pipe(
       switchMap((data)=>{
         let tempPendingOrders
-        console.log(data)
         this.soldItemData = data
-        console.log(this.soldItemData[0])
         this.soldItems = this.soldItemData[0].topSellers
-        console.log(this.pendingOrders)
-        console.log(this.soldItems)
         tempPendingOrders = this.pendingOrders
+
+       //to avoid duplication on the soldItems list 
        if(tempPendingOrders.length !==0){
           tempPendingOrders.forEach((order:any) =>{
             this.soldItems.forEach((item:any)=>{
@@ -54,10 +50,8 @@ export class PendingOrdersComponent implements OnInit {
           })
        }
        tempPendingOrders = []
-       
-       console.log(this.soldItems)
        return this.userService.setSoldItems(this.soldItems)
-      //return EMPTY
+    
       }),
       switchMap((data)=>{
         return EMPTY

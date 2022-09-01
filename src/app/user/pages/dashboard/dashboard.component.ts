@@ -86,9 +86,10 @@ export class DashboardComponent implements OnInit {
         let addedItem : any[] = []
         let isDuplicate : boolean = false
         addedItem.push(product)
-        console.log(addedItem[0].id)
+    
         this.cartData = data
         this.cartOrder = this.cartData.carts
+        //check if there is an existing item in the cart
           if(this.cartOrder.length !== 0){
             newCart = this.cartOrder
             addedItem.forEach(order =>{
