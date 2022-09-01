@@ -1,1 +1,26 @@
-<p>dashboard-item works!</p>
+<mat-card class="card">
+<div class="row">   
+  <div class="col-md-3 col-sm-6">
+      <div class="product-grid">
+          <div class="product-image">
+              <a href="#" class="image">
+                  <img src={{product?.imageURL}}>
+              </a>
+              <ul class="product-links">
+                  <li><a href="#"><i class="fa fa-search"></i></a></li>
+                  <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                  <li><a href="#"><i class="fa fa-random"></i></a></li>
+              </ul>
+              <a (click)= addtocart() class="add-to-cart">Add to Cart</a>
+          </div>
+          <div class="product-content">
+              <h3 class="title"><a href="#">{{product?.name}}</a></h3>
+              <h5>Brand: {{product?.brand}}</h5>
+              <h5>For {{product?.gender}}</h5>
+              <div class="price">Php {{product?.price}}</div>
+          </div>
+      </div>
+  </div>
+</div>
+</mat-card>
+<router-outlet></router-outlet>

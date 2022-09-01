@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
 import { RoleGuard } from './core/guards/role.guard';
 import { UserRoleGuard } from './core/guards/user-role.guard';
+import { MainhomeComponent } from './homepage/mainhome/mainhome.component';
+import { LoginComponent } from './login/pages/login/login.component';
 
 
 
@@ -30,6 +32,13 @@ const routes : Routes = [
     path : "admin",
     loadChildren: () => import("./admin/admin.module").then(m => m.AdminModule),
     //canActivate: [AuthGuard, RoleGuard]
+  },
+  {
+    path: "home",
+    component: MainhomeComponent
+  },
+  {path: '**',
+   component: LoginComponent
   }
 ]
 

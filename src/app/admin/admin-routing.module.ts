@@ -15,7 +15,7 @@ const routes : Routes = [
    
   },
   {
-    path: "admin-dashboard",
+    path: "dashboard",
     component: AdminDashboardComponent,
     
   },
@@ -29,7 +29,6 @@ const routes : Routes = [
     component: ProductFormComponent
   }
     
-  
  
 ]
 

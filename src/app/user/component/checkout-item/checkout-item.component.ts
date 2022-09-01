@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Order } from '../../models/order';
+import { Products } from '../../models/products';
 
 @Component({
   selector: 'app-checkout-item',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./checkout-item.component.scss']
 })
 export class CheckoutItemComponent implements OnInit {
-
+  @Input() checkout : Order | undefined
+  @Output() deleteOrderActionEmitter = new EventEmitter()
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  
+  deleteOrder(){
+    this.deleteOrderActionEmitter.emit(this.checkout)
+  }
 }
+

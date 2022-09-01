@@ -1,1 +1,69 @@
-<p>pending-orders works!</p>
+<ng-container *ngIf="pendingOrders.length !=0">
+
+    <!-- <div class="container">
+        <div class="card">
+            <h5 class="card-title">Thank you for shopping at SEVN!</h5>
+        </div>
+        <div class="center">
+            <img src="https://cdn.onlinewebfonts.com/svg/img_10554.png" alt="">
+            <button routerLink="/user"><i class="fa fa-shopping-bag" style="color: black"></i>  Continue Shopping</button>
+        </div>
+    </div>
+
+    <div *ngFor = "let item of pendingOrders">
+        <app-pending-item [pendingorder] = "item">
+    </app-pending-item>
+    </div>
+    <strong>Grand Total : ${{grandTotal}}</strong>
+    <h1>Thank you for Shopping at Seven</h1>
+    <button mat-flat-button routerLink="/user">Shop More</button> -->
+
+    <div class="container">
+        <article class="card">
+            <header class="card-header"> My Orders / Tracking </header>
+            <div class="card-body">
+                <h3 style="font-family: fantasy;">Thanks for ordering at SEVN!</h3>
+                <hr>
+                <h6>Order ID: OD45345345435</h6>
+                <article class="card">
+                    <div class="card-body row">
+                        <div class="col"> <strong>Estimated Delivery time:</strong> <br>02 SEP 2022 </div>
+                        <div class="col"> <strong>Shipping BY:</strong> <br> SEVN, | <i class="fa fa-phone"></i> +1598675986 </div>
+                        <div class="col"> <strong>Status:</strong> <br> PENDING </div>
+                        <div class="col"> <strong>Tracking #:</strong> <br> BD045903594059 </div>
+                    </div>
+                </article>
+                <div class="track">
+                    <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
+                    <div class="step active"> <span class="icon"> <i class="fa fa-hourglass"></i> </span> <span class="text"> Pending..On process</span> </div>
+                    <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
+                    <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Ready for pickup</span> </div>
+                </div>
+                <a routerLink="/user" class="btn btn-warning" data-abc="true"><i class="fa fa-shopping-bag" style="color: white"></i> Continue Shopping</a>
+              <hr>
+                 <div *ngFor = "let item of pendingOrders" class = "orders">
+                 <app-pending-item [pendingorder] = "item">
+                 </app-pending-item>
+                 </div>
+                <hr>
+            </div>
+        </article>
+    </div>
+
+</ng-container>
+
+<!--IF CHECKOUT IS EMPTY-->
+<ng-container *ngIf="pendingOrders.length == 0">
+    <!-- *ngIf="products.length ==0" -->
+    <div class="container">
+        <div class="pendingcard">
+            <h5 class="card-title">My Pending Orders</h5>
+        </div>
+        <div class="center">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.cFdYue38FjfacdSvCfBiKwHaDm&pid=Api&P=0" alt="">
+            <h4>Bummer, no pending orders!</h4>
+            <h5>Add to cart</h5>
+            <button routerLink="/user">Shop Now</button>
+        </div>
+    </div>
+</ng-container>

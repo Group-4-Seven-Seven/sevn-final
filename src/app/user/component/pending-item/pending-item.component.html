@@ -1,1 +1,46 @@
-<p>pending-item works!</p>
+
+<ng-container>
+    <!-- <div class="container">
+        <div class="card-table">
+            <div class="cart-product">
+                <table class="table table-responsive" style="display:grid; justify-content: center; text-align: center;">
+                    <thead>
+                        <tr> -->
+                            <!-- <th>Product Name</th>
+                            <th>Product Image</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Status</th> -->
+                        <!-- </tr>
+                    </thead>
+                    <tbody>
+                        <tr> -->
+                            <!-- <td>{{pendingorder?.name}}</td>
+                            <td><img style="width: 120px;" src={{pendingorder?.imageURL}} alt=""></td>
+                            <th style="width: 12%;">{{pendingorder?.price}}</th>
+                            <td style="width: 12%;">{{pendingorder?.quantity}}</td>
+                            <td style="width: 12%;">{{pendingorder?.total}}</td>
+                            <td>Pending</td> -->
+                        <!-- </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> -->
+    <mat-card class="ordercard">
+        <img mat-card-image src={{pendingorder?.imageURL}}  height = "250" >
+        <div class = "container__text">
+        <mat-card-title>{{pendingorder?.name}}</mat-card-title>
+            <mat-card-subtitle>Brand: {{pendingorder?.brand}}</mat-card-subtitle>
+            <mat-card-content>
+              <p>Quantity {{pendingorder?.quantity}}</p>
+              <p>Price: {{pendingorder?.price}}</p>
+              <p>Total: {{pendingorder?.total}}</p>
+              <p><b>Status:</b> Pending</p>
+            </mat-card-content>
+    </div>
+    <!-- <hr> -->
+    </mat-card>
+</ng-container>
+

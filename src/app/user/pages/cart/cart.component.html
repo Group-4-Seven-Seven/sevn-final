@@ -1,1 +1,78 @@
-<p>cart works!</p>
+<ng-container class = "container" *ngIf="cartOrder.length !=0">
+<mat-grid-list cols="3" rowHeight="100px" >
+
+<mat-grid-tile rowspan="10" colspan="2" style="background-color: #dcdcdc" style = "margin-top: -230px; position: relative; overflow-y: scroll;">
+    
+    <mat-list>
+        <div *ngFor = "let item of cartOrder">
+            <app-cart-item [cartorder] = "item"
+            (deleteorderEmitter) = "executeDeleteOrder(item)" (quantityActionEmitter) = "editQuantity($event)">
+        </app-cart-item>
+        </div>
+    </mat-list> 
+    
+</mat-grid-tile>
+
+<mat-grid-tile rowspan="5" colspan="1" style = "margin-top: 240px;">
+    
+    <mat-list>
+        <mat-list-item style = "font-size: 26px"><strong>Summary</strong></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item></mat-list-item>
+        <mat-list-item>Subtotal:
+        <p style="margin:0px 0px 0px 190px">Php {{grandTotal}}</p></mat-list-item>
+        <mat-list-item>Estimated Delivery and Handling:  
+        <p style="margin:0px 20px 0px">Php 0.00</p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item><strong>Grand Total :</strong>
+        <strong style="margin:0px 0px 0px 164px">Php {{grandTotal}}</strong>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item></mat-list-item>
+        <mat-list-item>
+        <div class = "checkoutbtn">
+        <button
+        style="background-color:black;
+         color:white;
+         border-radius: 30px;
+         width: 350px;
+         text-align: center"
+         mat-flat-button  (click)="checkout()">Checkout</button>
+       </div>
+        </mat-list-item>
+        <mat-list-item >
+        <button
+        style=" background-color: #f2f3f4;
+        color:black;
+        border-radius: 30px;
+        margin-right: 75px;"
+        mat-flat-button (click)="emptycart()">Empty Cart</button>
+        <button
+        style=" background-color: #f2f3f4;
+        color:black;
+        border-radius: 30px;
+        margin-left: 75px;"
+        mat-flat-button routerLink="/user" >Shop More</button>
+        </mat-list-item>
+    </mat-list>
+    
+    
+</mat-grid-tile>
+</mat-grid-list>
+</ng-container>
+
+<!-- IF CART IS EMPTY -->
+<ng-container *ngIf="cartOrder.length == 0">
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">My Cart</h5>
+        </div>
+        <div class="center">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.cFdYue38FjfacdSvCfBiKwHaDm&pid=Api&P=0" alt="">
+            <h4>Bummer, your cart is empty!</h4>
+            <h5>Add item to it now</h5>
+            <button class="shopnow" routerLink="/user">Shop Now</button>
+        </div>
+    </div>
+</ng-container>

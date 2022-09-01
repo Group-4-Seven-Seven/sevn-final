@@ -10,6 +10,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { ProductFormComponent } from './pages/product-form/product-form.component';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { MaterialDesignModule } from '../material-design.module';
 
 
 
@@ -28,7 +29,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     AdminRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    MaterialDesignModule
     
   ],
   exports:[

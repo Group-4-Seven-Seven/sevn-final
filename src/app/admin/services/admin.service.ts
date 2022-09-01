@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable,tap } from 'rxjs';
+import { User } from 'src/app/user/models/user';
 import { Product } from '../models/product';
 
 @Injectable({
@@ -12,6 +13,9 @@ export class AdminService {
   addFlag : boolean = false
   constructor(private http : HttpClient) { }
 
+
+
+  //-------------------For Product-----------------
   getProducts() : Observable<Product[]>{
     return this.http.get<Product[]>("http://localhost:3000/products")
   }
@@ -37,5 +41,26 @@ export class AdminService {
 
     })
     return this.editedProduct
+}
+
+
+//--------------------For Admin Dashboard----------------------
+
+getSoldItems(){
+  return this.http.get("http://localhost:3000/soldItems")
+}
+
+//------------------For Admin -------------------
+
+getUserStatus(){
+  return this.http.get("http://localhost:3000/activation")
+}
+
+getUsers(){
+  return this.http.get("http://localhost:3000/users")
+}
+
+changeActiveStatus(active:any, user:User){
+  return this.http.put(`http://localhost:3000/activation/${user.id}`, active)
 }
 }

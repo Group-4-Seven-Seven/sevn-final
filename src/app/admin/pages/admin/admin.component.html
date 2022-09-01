@@ -1,1 +1,6 @@
-<p>admin works!</p>
+<div *ngFor = "let user of users; let i = index" >
+    <app-admin-item [user] = "user" [status] = "statuses[i].active"
+    (activeActionEmitter) = "changeActiveStatus($event)"
+    (userActionEmitter) = "getUser($event)"></app-admin-item>
+</div>
+

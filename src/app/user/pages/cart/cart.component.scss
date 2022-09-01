@@ -1,0 +1,75 @@
+.card {
+    height: 60vh;
+    margin: 25px;
+    padding: 25px;
+}
+
+.center img {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    outline: none;
+    height: 162px;
+    width: auto;
+    margin: 20px 0px;
+}
+
+h4,
+h5 {
+    font-weight: 400;
+    font-size: larger;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.container {
+    overflow-y: scroll;
+    margin-top: 100px;
+}
+
+.shopnow {
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    text-align: center;
+    width: 130px;
+    height: 30px;
+}
+
+// .mat-list {
+//     margin-left: -70px;
+// }
+
+// .mat-grid-tile {
+//     display: block;
+// }
+
+
+
+
+
+// .mat-grid-tile-content {
+//     top: -260px;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     position: absolute;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     height: 100%;
+//     padding: 0;
+//     margin: 0;
+// }
+
+.mat-list-base {
+    padding-top: 60px;
+    display: block;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}

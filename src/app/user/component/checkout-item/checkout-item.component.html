@@ -1,1 +1,53 @@
-<p>checkout-item works!</p>
+<!-- <ng-container>
+    <div class="container">
+        <div class="card-table">
+            <div class="cart-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Product Image</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr >
+                            <td>{{checkout?.name}}</td>
+                            <td><img style="width: 120px;" src={{checkout?.imageURL}} alt=""></td>
+                            <th style="width: 12%;">{{checkout?.price}}</th>
+                            <td style="width: 12%;">{{checkout?.quantity}}</td>
+                            <td style="width: 12%;">{{checkout?.total}}</td>
+                            <td>
+                                <button  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click) = "deleteOrder()">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-container> -->
+
+<mat-card class="bagcard">
+    <img mat-card-image src={{checkout?.imageURL}} height = "250" >
+    <div class = "container__text">
+    <mat-card-title>{{checkout?.name}}</mat-card-title>
+        <mat-card-subtitle>Best for {{checkout?.gender}}</mat-card-subtitle>
+        <mat-card-content>
+          <p><i>Brand:</i> {{checkout?.brand}}</p>
+          <p><i>Quantiy:</i> {{checkout?.quantity}}</p>
+          <p><i>Total:</i> {{checkout?.total}}</p>
+<!-- <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script> -->
+<mat-card-actions>
+    <!-- <button (click)="delete()" class ="delbutton" mat-button><a>DELETE</a></button> -->
+    <button mat-icon-button class="deltbtn" aria-label="deltbtn" (click) = "deleteOrder()"><mat-icon>delete</mat-icon>DELETE</button>
+</mat-card-actions>
+</mat-card-content>
+</div>
+</mat-card>
+<router-outlet></router-outlet>

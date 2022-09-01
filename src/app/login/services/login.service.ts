@@ -19,12 +19,14 @@ export class LoginService {
     return this.http.get("http://localhost:3000/users").pipe(map((users:any)=>{
       return users.filter((user:any)=> user.email == email)
     }))
- 
-    
+  
+  
     
   }
 
- 
+getActiveStatus(userID:any){
+  return this.http.get(`http://localhost:3000/activation/${userID}`)
+}
  
 } 
 

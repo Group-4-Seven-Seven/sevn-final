@@ -11,6 +11,10 @@ import { DashboardItemComponent } from './component/dashboard-item/dashboard-ite
 import { PendingItemComponent } from './component/pending-item/pending-item.component';
 import { ProfileItemComponent } from './component/profile-item/profile-item.component';
 import { UserRoutingModule } from './user-routing.module';
+import { MaterialDesignModule } from '../material-design.module';
+import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -29,7 +33,11 @@ import { UserRoutingModule } from './user-routing.module';
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    MaterialDesignModule,
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports :[
      DashboardComponent,

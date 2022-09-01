@@ -1,1 +1,41 @@
-<p>cart-item works!</p>
+<!--MAIN CART PAGE-->
+<ng-container>
+<div class="container mt-2 mb-2">
+    <div class="d-flex justify-content-center row" style = "margin-top: 10px; margin-bottom: 10px;">
+        <div class="col-md-10">
+
+            <div class="row p-2 bg-white border rounded">
+                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src={{cartorder?.imageURL}}></div>
+                
+                <div class="col-md-6 mt-1">
+                    <h3><strong>{{cartorder?.name}}</strong></h3>
+                    <div class="d-flex flex-row">
+                        <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>310</span>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <p *ngIf = "editFlag == false" >Quantity: {{cartorder?.quantity}}</p>
+                        <input type="number" *ngIf = "editFlag" [(ngModel)] = "quantity" style="width: 50px">
+                        <button class = "addbtn" (click)="editQuantity()" *ngIf = "editFlag== false">Add</button>
+                        <button class = "submitbtn" (click)="submitQuantity()" *ngIf = "editFlag">Submit</button>
+                    </div>
+                    <div class="mt-1 mb-1 spec-1"><span>Brand: </span><span class="dot"></span><span>{{cartorder?.brand}}/</span><span class="dot"></span><span>{{cartorder?.category}}<br></span></div>
+                    <div class="mt-1 mb-1 spec-1"><span>Unique design/</span><span class="dot"></span><span>Best For </span><span class="dot"></span><span>{{cartorder?.gender}}<br></span></div>
+                    <!-- <p class="text-justify text-truncate para mb-0" style = "color: white">There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                        alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p> -->
+                    </div>
+                 
+                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <h4 class="mr-1">Php {{cartorder?.price}}</h4>
+                    </div>
+                    <h6 class="text-success">Free shipping</h6>
+                    <div class="d-flex flex-column mt-4"><button class="btn btn-dark btn-sm" type="button">Details</button>
+                    <button class="btn btn-outline-dark btn-sm mt-2" type="button" (click)="deleteOrder()">Delete Order</button></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</ng-container>
+<!--END OF MAIN CART PAGE-->

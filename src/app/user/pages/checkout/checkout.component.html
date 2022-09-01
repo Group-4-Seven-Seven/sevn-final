@@ -1,1 +1,137 @@
-<p>checkout works!</p>
+<ng-container *ngIf="checkoutOrder.length !=0" style="margin-top: 200px; overflow: scroll;">
+<mat-grid-list cols="3" rowHeight="200px" >
+    <mat-grid-tile colspan="1" rowspan="5">
+
+        <mat-list style="margin-top: -650px; margin-left: 80px;">
+             
+            <mat-list-item style = "font-size: 24px; color:black">
+              <b>Items in your bag</b></mat-list-item>
+            <mat-divider></mat-divider>
+        <div *ngFor = "let item of checkoutOrder" style="margin-right: 20px;">
+            <app-checkout-item [checkout] = "item" (deleteOrderActionEmitter) = "executeDeleteOrder($event)">
+        </app-checkout-item>
+        </div>
+        </mat-list>
+    </mat-grid-tile>
+
+    <div class='container'>
+        <div class='window'>
+          <!--CHECKOUT-->
+          <div style = "margin-top: -68px; margin-left: 58px;">
+            <mat-list style = "padding-top: 125px;">
+                <mat-list-item style = "font-size: 26px"><strong>Checkout Summary</strong></mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>Subtotal:
+                <p style="margin:0px 0px 0px 190px">Php {{itemTotalPrice}}</p></mat-list-item>
+                <mat-list-item>Estimated Delivery and Handling:  
+                <p style="margin:0px 20px 0px">Php 0.00</p>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item><strong>Grand Total :</strong>
+                <strong style="margin:0px 0px 0px 164px">Php {{itemTotalPrice}}</strong>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item></mat-list-item>
+                <mat-list-item>
+                <div class = "placeorderbtn">
+                <button
+                style="background-color:black;
+                 color:white;
+                 border-radius: 30px;
+                 width: 350px;
+                 text-align: center"
+                 mat-flat-button (click) = "emptyCheckout()" >Cancel All</button>
+               </div>
+                </mat-list-item>
+                <mat-list-item >
+                <div class = "placeorderbtn">
+                <button
+                style="background-color:black;
+                color:white;
+                border-radius: 30px;
+                width: 350px;
+                 text-align: center;
+                 border-color: black;"
+                 routerLink="/user"
+                 mat-flat-button >Shop More</button>
+                </div>
+                </mat-list-item>
+            </mat-list>
+          </div>
+
+          <!--PAYMENT-->
+          <div id="payment">
+  
+            <form id="checkout">
+      
+              <input class="card" id="visa" type="button" name="card" value="">
+              <input class="card" id="mastercard" type="button" name="card" value="">
+      
+              <label>Credit Card Number</label>
+              <input id="cardnumber" type=text pattern="[0-9]{13,16}" name="cardnumber" requierd="true" placeholder="0123-4567-8901-2345">
+      
+              <label>Card Holder</label>
+             <input id="cardholder" type="text" name="name" requierd="true" maxlength="50" placeholder="Cardholder">
+      
+              <label>Expiration Date</label>
+              <label id="cvc-label">CVC/CVV</label>
+              <div id="left">
+                  <select name="month" id="month" onchange="" size="1">
+                    <option value="00">MM</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+              <p>/</p>
+                  <select name="year" id="year" onchange="" size="1">
+                    <option value="00">YY</option>
+                    <option value="01">16</option>
+                    <option value="02">17</option>
+                    <option value="03">18</option>
+                    <option value="04">19</option>
+                    <option value="05">20</option>
+                    <option value="06">21</option>
+                    <option value="07">22</option>
+                    <option value="08">23</option>
+                    <option value="09">24</option>
+                    <option value="10">25</option>
+                  </select>
+              </div>
+      
+      
+              <input id="cvc" type="text" placeholder="Cvc/Cvv" maxlength="3" />
+      
+              <input class="btn" type="button" name="purchase" value="Purchase" 
+              (click) = "placeOrder()" style="background-color: black;">
+            </form>
+          </div>
+
+
+        </div>
+  </div>
+</mat-grid-list>
+ </ng-container>
+
+<!--IF CHECKOUT IS EMPTY-->
+<ng-container *ngIf="checkoutOrder.length == 0">
+    <div class="emptycontainer">
+        <div class="emptycard">
+            <h5 class="card-title">My Checkout Page</h5>
+        </div>
+        <div class="center">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.cFdYue38FjfacdSvCfBiKwHaDm&pid=Api&P=0" alt="">
+            <h4>Bummer, no items to checkout!</h4>
+            <h5>Add to cart now</h5>
+            <button class="shopnow" routerLink="/user">Shop Now</button>
+        </div>
+    </div>
+</ng-container>

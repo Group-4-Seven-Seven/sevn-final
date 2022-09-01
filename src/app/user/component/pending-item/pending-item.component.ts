@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Pending } from '../../models/pending';
 
 @Component({
   selector: 'app-pending-item',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pending-item.component.scss']
 })
 export class PendingItemComponent implements OnInit {
-
+  @Input() pendingorder : Pending | undefined;
+  
   constructor() { }
 
   ngOnInit(): void {

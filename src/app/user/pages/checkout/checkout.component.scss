@@ -1,0 +1,366 @@
+.emptycard {
+    height: 60vh;
+    margin-top: 105px;
+}
+
+.center img {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    outline: none;
+    height: 162px;
+    width: auto;
+    margin: 20px 0px;
+}
+
+h4,
+h5 {
+    font-weight: 400;
+    font-size: larger;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.emptycontainer {
+    overflow-y: scroll;
+    margin-top: 10px;
+}
+
+.shopnow {
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    text-align: center;
+    width: 130px;
+    height: 30px;
+}
+
+.mat-grid-tile-content {
+    top: -200px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+}
+
+mat-grid-tile {
+  overflow:visible;
+}
+
+.mat-list-base {
+    padding-top: 60px;
+    display: block;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+// .tile1 {
+//   left: -30px;
+//   width: calc((33.3333% - 0.666667px) * 1 + 0px);
+//   top: -200px;
+//   height: calc(1004px);
+// }
+
+/////
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+body,html {
+  height:100%;
+  margin:0;
+  font-family:lato;
+}
+
+h2 {
+  margin-bottom:0px;
+  margin-top:25px;
+  text-align:center;
+  font-weight:200;
+  font-size:19px;
+  font-size:1.2rem;
+  
+}
+
+.window {
+    height:450px;
+    width: 800px;
+    background:#fff;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    // box-shadow: 0px 15px 50px 10px rgba(0, 0, 0, 0.2);
+    // border-radius:30px;
+    margin: 100px 0px 0px 430px;
+    z-index:10;
+  }
+  .order-info {
+    height:100%;
+    width:50%;
+    padding-left:25px;
+    padding-right:25px;
+    box-sizing:border-box;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    position:relative;
+  }
+  .price {
+    bottom:0px;
+    position:absolute;
+    right:0px;
+    color:#4488dd;
+  }
+  .order-table td:first-of-type {
+    width:25%;
+  }
+  .order-table {
+      position:relative;
+  }
+  .line {
+    height:1px;
+    width:100%;
+    margin-top:10px;
+    margin-bottom:10px;
+    background:#ddd;
+  }
+  .order-table td:last-of-type {
+    vertical-align:top;
+    padding-left:25px;
+  }
+  .order-info-content {
+    table-layout:fixed;
+  
+  }
+  
+  .full-width {
+    width:100%;
+  }
+  
+  //////////////////////////////////////////////////////////////////////////////
+  /// 
+  @mixin border-radius($radius) {
+      -webkit-border-radius: $radius;
+      -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+      border-radius: $radius;
+    }
+    
+    $primary-color: #6C7A89;
+    $secondary-color: #00b894;
+    $decor-color: #BDC3C7;
+    $font: "proxima-nova", sans-serif;
+    
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-transition: 0.2s ease-in-out;
+      -moz-transition: 0.2s ease-in-out;
+      -o-transition: 0.2s ease-in-out;
+      transition: 0.2s ease-in-out;
+      font-family: $font;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: $primary-color;
+      &:focus{
+        outline: none;
+      }
+    }
+    
+    body{
+      background-color: #e2fbf5;
+    }
+    
+    #wrapper{
+      //  position: absolute;
+       top: 50%;
+       margin-top: -240px;
+       left: 0;
+       width: 63%;
+    }
+    
+    #container{
+      width: 720px;
+      height: 480px;
+      margin: 0 auto;
+      box-shadow: 1px 1px 10px 2px rgba(0,0,0,0.2);
+      @include border-radius(5px);
+      overflow: hidden;
+      background: rgb(179,190,173);
+      background: -moz-linear-gradient(45deg, rgba(179,190,173,1) 0%, rgba(223,229,215,1) 60%, rgba(252,255,244,1) 100%);
+      background: -webkit-linear-gradient(45deg, rgba(179,190,173,1) 0%,rgba(223,229,215,1) 60%,rgba(252,255,244,1) 100%);
+      background: linear-gradient(45deg, rgba(179,190,173,1) 0%,rgba(223,229,215,1) 60%,rgba(252,255,244,1) 100%); 
+    }
+    
+    #info{
+      width: 52%;
+      height: 480px;
+      float: left;
+      background: -moz-linear-gradient(45deg, rgba(149,165,166,1) 0%, rgba(208,215,216,0) 56%, rgba(255,255,255,0) 100%);
+      background: -webkit-linear-gradient(45deg, rgba(149,165,166,1) 0%,rgba(208,215,216,0) 56%,rgba(255,255,255,0) 100%);
+      background: linear-gradient(45deg, rgba(149,165,166,1) 0%,rgba(208,215,216,0) 56%,rgba(255,255,255,0) 100%);
+      #product{
+        width: 500px;
+        margin: -50px 0 -85px -65px;
+      }
+      p{
+        width: 100%;
+        text-align: center;
+        line-height: 1.5em;
+        letter-spacing: 1px;
+      }
+      #price{
+        width: 50%;
+        margin: 0 auto;
+        letter-spacing: 1px;
+        h2{
+          width: 100%;
+          text-align: center;
+          font-weight: 700;
+          color: #000;
+          padding-top: 10px;
+        }
+      }
+    }
+    
+    #payment{
+      width: 40%;
+      float: right;
+      padding: 40px 0px 5px 35px;
+  }
+    
+    #checkout{
+      width: 110%;
+      input{
+        margin-bottom: 15px;
+      }
+      label{
+        float: left;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-size: 0.6em;
+        padding: 0 0 5px 10px;
+      }
+      #cvc-label{
+        margin-left: 25px;
+      }
+      .card{
+        width: 29%;
+        margin: 0 10% 25px 10%;
+        border: none;
+        background: none;
+        height: 50px;
+        cursor: pointer;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        &:focus{
+          -webkit-filter: none;
+          filter: none;
+        }
+      }
+      #visa{
+        background-image: url("http://enwaara.se/codepen/visa.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+      }
+      #mastercard{
+        background-image: url("http://enwaara.se/codepen/mastercard.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 118%;
+        margin-left: 145px;
+        margin-top: -75px;
+      }
+      #cardnumber, #cardholder, #cvc{
+        width: 100%;
+        background: none;
+        border: 1px solid $primary-color;
+        padding: 8px 19px;
+        @include border-radius(50px);
+        letter-spacing: 1px;
+        &:focus {
+          border: 1px solid $secondary-color;
+        }
+      }
+      ::-webkit-input-placeholder {
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-size: 0.9em;
+        color: $decor-color;
+      }
+      #cardnumber{
+        letter-spacing: 3px;
+        &::-webkit-input-placeholder {
+          font-size: 1em;
+        }
+      }
+      #left{
+        width: 41%;
+        border: 1px solid $primary-color;
+        @include border-radius(50px);
+        overflow: hidden;
+        padding: 3px 5px;
+        float: left;
+        #month, #year{
+          background: none;
+          border: none;
+          padding: 5px;
+          @include border-radius(5px);
+          float: left;
+          font-size: 0.8em;
+          letter-spacing: 3px;
+          color: $decor-color;
+          -webkit-appearance: none;
+          -moz-appearance:    none;
+          appearance:         none;
+          option{
+            background: #ECECEC;
+          }
+        }
+        p{
+          float: left;
+          padding-top: 2px;
+          font-size: 1.2em;
+          color: $decor-color;
+          letter-spacing: 3px;
+        }
+      }
+      #cvc{
+        width: 48%;
+        float: left;
+        margin-left: 11%;
+      }
+      .btn{
+        background: $secondary-color;
+        border: none;
+        width: 100%;
+        padding: 12px 10px 10px 10px;
+        @include border-radius(50px);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 400;
+        color: #ECECEC;
+        cursor: pointer;
+        &:hover{
+          background: #16A085;
+        }
+      }
+    }

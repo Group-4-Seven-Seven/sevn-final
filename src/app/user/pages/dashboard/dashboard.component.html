@@ -1,1 +1,69 @@
-<p>dashboard works!</p>
+<!-- <mat-tab-group mat-align-tabs="center">
+  <mat-tab label="SHOES">Content 1</mat-tab>
+  <mat-tab label="BAGS">Content 2</mat-tab>
+  <mat-tab label="APPAREL">Content 3</mat-tab>
+  <mat-tab label="JEWELRY">Content 4</mat-tab>
+  <mat-tab label="ACCESSORIES">Content 5</mat-tab>
+</mat-tab-group> -->
+
+<!-- <mat-grid-list  -->
+  <div class = "banner">
+  <mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile rowspan="1" colspan="4" ></mat-grid-tile>
+  <img src="https://puls-img.chanel.com/1657270308494-01readytoweardesktop1jpg_856x2416.jpg"
+  style="object-fit: cover; width:100%; margin-top:95px;">
+  <div class="text" style="margin-top:95px;">Upgrade your wardrobe with new collections</div>
+  
+  <!-- <mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile rowspan="1" colspan="4"></mat-grid-tile>
+    <img src="https://media.tiffany.com/is/image/tiffanydm/MakersMini_BG_Hero2_Desktop?$tile$&wid=2992&fmt=webp"
+    style="object-fit: fill; width:100%; "> -->
+    <!-- <p class="text">Blahblah</p> -->
+    <!-- </mat-grid-list> -->
+  
+
+<!-- DESIGN CARD -->
+
+<!-- END OF DESIGN CARD -->
+
+<!-- <mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color">
+    {{tile.data}}
+  </mat-grid-tile>
+</mat-grid-list> -->
+<hr>
+<div class="intro">FALL-WINTER 2022/23 PRE-COLLECTION</div>
+<hr>
+
+<div class = "instance" *ngFor = "let data of products | filter: searchKey: 'name' | filter: SearchBrand:'brand' | sort:[SortbyParam,SortDirection]">
+  <app-dashboard-item [product] = "data"
+  (addtocartEmitter) = "executeAddtoCart(data)">
+  </app-dashboard-item>
+</div>
+
+
+</mat-grid-list>
+</div>
+
+<div class = "filter">
+  <br>
+  <label>Filter by Brand: &nbsp; </label>
+  <input [(ngModel)]='brand'>
+  <button type="button" (click)="onBrandFilter()">Search</button>
+  <button type="button" (click)="onBrandFilterClear()">Clear</button> &nbsp;
+  
+  <label>Sort by &nbsp;</label>
+  <select [(ngModel)] = 'SortbyParam'>
+  <!-- <option value="brand">City</option> -->
+  <option value="price">Price</option>
+  </select>
+  <button type="button" (click) = "onSortDirection()">
+  <i *ngIf="SortDirection==='asc'" class="fas fa-sort-alpha-down"></i>
+  <i *ngIf="SortDirection==='desc'" class="fas fa-sort-alpha-up"></i>
+  </button>
+  <br>
+  </div>
