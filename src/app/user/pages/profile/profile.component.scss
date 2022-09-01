@@ -8,12 +8,13 @@ body {
 }
 
 .card {
-  width: 350px;
-    background-color: #efefef;
+  width: 715px;
     border: none;
     cursor: pointer;
     transition: all 0.5s;
     left: -250px;
+    display: flex;
+    align-items: flex-start;
 }
 
 .image img {
@@ -86,4 +87,42 @@ hr .new1 {
 
 .date {
   background-color: #ccc
+}
+
+input {
+  width: 100%;
+}
+
+.full-width {
+  padding: 0em 0 0em 0 !important;
+}
+
+mat-card {
+  box-shadow: none !important;
+  margin-left: 230px;
+  margin-top: 45px;
+}
+// mat-form-field-appearance-outline {
+//   padding: 0em;
+// }
+
+// .mat-form-field-infix {
+//   padding: 0em !important;
+// }
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  border-radius: 4px 4px 0 0;
+  padding: 0.75em 0.75em 0 0.75em;
+  width: 100%;
+  padding-right: 115px;
+}
+
+.form-control {
+  background-color: none;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
