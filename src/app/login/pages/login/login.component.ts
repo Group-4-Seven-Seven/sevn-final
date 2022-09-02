@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
         }else if(account[0].userType == "admin"){
           localStorage.setItem('token', body.accessToken)
           localStorage.setItem('userType', account[0].userType)
-          this.router.navigate(["admin"])
+          this.router.navigate(["home"])
         }
         else{
           alert("Your account is temporarily deactivated!")
