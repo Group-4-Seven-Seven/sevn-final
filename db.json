@@ -187,34 +187,6 @@
     {
       "carts": [
         {
-          "id": 2,
-          "name": "NIKE REACT MILER",
-          "brand": "NIKE",
-          "gender": "Men",
-          "category": "SHOES",
-          "price": 5519.56,
-          "is_in_inventory": true,
-          "items_left": 3,
-          "imageURL": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-5cc7de3b-2afc-49c2-a1e4-0508997d09e6/react-miler-mens-running-shoe-DgF6nr.jpg",
-          "quantity": 1,
-          "isPending": false,
-          "total": 5519.56
-        },
-        {
-          "id": 3,
-          "name": "NIKE AIR ZOOM PEGASUS 39",
-          "brand": "NIKE",
-          "gender": "Women",
-          "category": "SHOES",
-          "price": 6595.25,
-          "is_in_inventory": true,
-          "items_left": 3,
-          "imageURL": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,b_rgb:f5f5f5/f3484b28-7886-4146-a931-a6f9c3a9f50c/air-zoom-pegasus-39-road-running-shoes-kmZSD6.png",
-          "quantity": 1,
-          "isPending": false,
-          "total": 6595.25
-        },
-        {
           "id": 4,
           "name": "NIKE ZOOMX INVINCIBLE RUN FLYKNIT 2",
           "brand": "NIKE",
@@ -1271,7 +1243,7 @@
     },
     {
       "id": 41,
-      "name": "CRAIE TOGO BIRKIN, 2021",
+      "name": "CRAIE TOGO BIRKIN 25 ROSE GOLD HARDWARE, 2021",
       "brand": "Hermès",
       "gender": "Women",
       "category": "BAGS",
@@ -1284,7 +1256,7 @@
     },
     {
       "id": 42,
-      "name": "BLEU BRUME/VERT JADE/GOLD SELLIER KELLY 25, 2022",
+      "name": "BLEU BRUME, VERT JADE, AND GOLD SELLIER TRI-COLOR KELLY 25 PALLADIUM HARDWARE, 2022",
       "brand": "Hermès",
       "gender": "Women",
       "category": "BAGS",
@@ -1297,7 +1269,7 @@
     },
     {
       "id": 43,
-      "name": "MIMOSA CROCODILE POROSUS BIRKIN 25, 2021",
+      "name": "MIMOSA CROCODILE POROSUS BIRKIN 25 PALLADIUM HARDWARE, 2021",
       "brand": "Hermès",
       "gender": "Women",
       "category": "BAGS",
@@ -1310,7 +1282,7 @@
     },
     {
       "id": 44,
-      "name": "LILAC BOX NEPAL CONSTANCE 18, 2001",
+      "name": "LILAC BOX NEPAL CONSTANCE 18 PALLADIUM HARDWARE, 2001",
       "brand": "Hermès",
       "gender": "Women",
       "category": "BAGS",
@@ -1336,7 +1308,7 @@
     },
     {
       "id": 46,
-      "name": "FAUVE BARENIA&OSIER WICKER MINI PICNIC KELLY II 20, 2021",
+      "name": "FAUVE BARENIA AND OSIER WICKER MINI PICNIC KELLY II 20 PALLADIUM HARDWARE, 2021",
       "brand": "Hermès",
       "gender": "Women",
       "category": "BAGS",
@@ -1375,7 +1347,7 @@
     },
     {
       "id": 49,
-      "name": "IRIDESCENT GREEN QUILTED LAMBSKIN FLAPE BAG, 2022",
+      "name": "IRIDESCENT GREEN QUILTED LAMBSKIN MEDIUM CLASSIC DOUBLE FLAP GOLD HARDWARE, 2022",
       "brand": "CHANEL",
       "gender": "Women",
       "category": "BAGS",
@@ -1440,7 +1412,7 @@
     },
     {
       "id": 42,
-      "name": "BLEU BRUME/VERT JADE/GOLD SELLIER TRI-COLOR KELLY 25, 2022",
+      "name": "BLEU BRUME, VERT JADE, AND GOLD SELLIER TRI-COLOR KELLY 25 PALLADIUM HARDWARE, 2022",
       "brand": "Hermès",
       "gender": "Women",
       "category": "BAGS",
@@ -1453,7 +1425,7 @@
     },
     {
       "id": 43,
-      "name": "MIMOSA CROCODILE POROSUS BIRKIN 25, 2021",
+      "name": "MIMOSA CROCODILE POROSUS BIRKIN 25 PALLADIUM HARDWARE, 2021",
       "brand": "Hermès",
       "gender": "Women",
       "category": "BAGS",
@@ -1466,7 +1438,7 @@
     },
     {
       "id": 44,
-      "name": "LILAC BOX NEPAL CONSTANCE 18, 2001",
+      "name": "LILAC BOX NEPAL CONSTANCE 18 PALLADIUM HARDWARE, 2001",
       "brand": "Hermès",
       "gender": "Women",
       "category": "BAGS",
@@ -1492,7 +1464,7 @@
     },
     {
       "id": 46,
-      "name": "FAUVE BARENIA/OSIER WICKER MINI PICNIC KELLY II 20, 2021",
+      "name": "FAUVE BARENIA AND OSIER WICKER MINI PICNIC KELLY II 20 PALLADIUM HARDWARE, 2021",
       "brand": "Hermès",
       "gender": "Women",
       "category": "BAGS",
@@ -1531,7 +1503,7 @@
     },
     {
       "id": 49,
-      "name": "IRIDESCENT GREEN QUILTED LAMBSKIN BAG, 2022",
+      "name": "IRIDESCENT GREEN QUILTED LAMBSKIN MEDIUM CLASSIC DOUBLE FLAP GOLD HARDWARE, 2022",
       "brand": "CHANEL",
       "gender": "Women",
       "category": "BAGS",
@@ -1609,7 +1581,7 @@
     },
     {
       "id": 55,
-      "name": "SUPREME RED & WHITE EPI KEEPALL 55 BANDOULIÈRE, 2017",
+      "name": "SUPREME RED AND WHITE EPI KEEPALL 55 BANDOULIÈRE SILVER HARDWARE, 2017",
       "brand": "Louis Vuitton",
       "gender": "Women",
       "category": "BAGS",
@@ -1622,7 +1594,7 @@
     },
     {
       "id": 56,
-      "name": "PRINTED TOILE&INDIGO REGATE RMS ROLLING MOBILITY SUITCASE, 2022",
+      "name": "PRINTED TOILE AND INDIGO REGATE RMS ROLLING MOBILITY SUITCASE PALLADIUM HARDWARE, 2022",
       "brand": "Hermès",
       "gender": "Men",
       "category": "BAGS",
