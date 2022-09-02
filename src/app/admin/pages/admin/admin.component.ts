@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { forkJoin } from 'rxjs';
 import { User } from 'src/app/user/models/user';
 import { AdminService } from '../../services/admin.service';
@@ -16,7 +17,8 @@ export class AdminComponent implements OnInit {
   tempUsers : any[]=[]
   tempUserID: any[] = []
   tempStatuses : any[] =[]
-  constructor(private adminService : AdminService) { }
+  constructor(private adminService : AdminService,
+              private router: Router) { }
 
   ngOnInit(): void {
     //getting the active status and details of the registered users
@@ -54,5 +56,38 @@ export class AdminComponent implements OnInit {
   changeActiveStatus(active:any){
     console.log(active)
     this.adminService.changeActiveStatus(active, this.user!).subscribe()
+  }
+
+  logout(){
+    localStorage.clear()
+    this.router.navigate(['/login'])
+  }
+
+  admin(){
+    this.router.navigate(['/admin'])
+  }
+
+  adminDash(){
+    this.router.navigate(['/admin/dashboard'])
+  }
+
+  adminProd(){
+    this.router.navigate(['/admin/product'])
+  }
+
+  home(){
+    this.router.navigate(['/home'])
+  }
+
+  userpage(){
+    this.router.navigate(['/user'])
+  }
+
+  userOrder(){
+    this.router.navigate(['/user/pending-orders'])
+  }
+
+  profile(){
+    this.router.navigate(['/user/profile'])
   }
 }

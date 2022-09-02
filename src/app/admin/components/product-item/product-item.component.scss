@@ -1,4 +1,55 @@
-img{
-    height: 300px;
-    width: 400px;
+body {
+    background:#eee
+}
+
+// .ratings i {
+//     font-size: 16px;
+//     color: red
+// }
+
+// .strike-text {
+//     color: red;
+//     text-decoration: line-through
+// }
+.product-image {
+    width: 70%
+}
+// .dot {
+//     height: 7px;
+//     width: 7px;
+//     margin-left: 6px;
+//     margin-right: 6px;
+//     margin-top: 3px;
+//     background-color: blue;
+//     border-radius: 50%;
+//     display: inline-block
+// }
+
+.spec-1 {
+    color: #938787;
+    font-size: 15px
+}
+
+h5 {
+    font-weight: 400;
+}
+
+.para{font-size: 16px}
+
+.navbar-brand {
+    color: black;
+    font-weight: bold;
+    font-family: Garamond, serif;
+    font-size: 3rem;
+    padding: 0px;
+    margin-left: 190px;
+  }
+
+  .mb-5, .mt-5 {
+    margin-bottom: 0rem!important;
+    margin-top: 1rem!important;
+}
+
+.img-fluid img-responsive rounded product-image {
+    border-radius: 0px !important;
 }

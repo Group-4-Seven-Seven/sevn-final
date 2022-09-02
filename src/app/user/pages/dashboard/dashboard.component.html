@@ -19,34 +19,64 @@
     <p>Be Yourself with SEVN.</p>
     </div>
   
-  <!-- <mat-grid-list cols="4" rowHeight="100px">
-    <mat-grid-tile rowspan="1" colspan="4"></mat-grid-tile>
-    <img src="https://media.tiffany.com/is/image/tiffanydm/MakersMini_BG_Hero2_Desktop?$tile$&wid=2992&fmt=webp"
-    style="object-fit: fill; width:100%; "> -->
-    <!-- <p class="text">Blahblah</p> -->
-    <!-- </mat-grid-list> -->
-  
-
-<!-- DESIGN CARD -->
-
-<!-- END OF DESIGN CARD -->
-
-<!-- <mat-grid-list cols="4" rowHeight="100px">
-  <mat-grid-tile
-      *ngFor="let tile of tiles"
-      [colspan]="tile.cols"
-      [rowspan]="tile.rows"
-      [style.background]="tile.color">
-    {{tile.data}}
-  </mat-grid-tile>
-</mat-grid-list> -->
 <hr>
 <div class="intro">FALL-WINTER 2022/23 PRE-COLLECTION</div>
 <hr>
+<!--CATEGORY-->
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,900" rel="stylesheet">
 
-<div class = "instance" *ngFor = "let data of products | filter: searchKey: 'name' | filter: SearchBrand:'brand' | sort:[SortbyParam,SortDirection]">
+<div class="container">
+  <h6 style = "font-size:20px; text-decoration: underline;"><strong>SHOP BY CATEGORY</strong></h6>
+  <div class="row" style = "justify-content: center;">
+
+    <div class="col-md-1">
+      <a (click)="filter('SHOES')">
+      <div class="card card-1">
+      </div>
+      <h6><b>SHOES</b></h6>
+      </a>
+    </div>
+
+    <div class="col-md-1">
+      <a (click)="filter('BAGS')">
+      <div class="card card-2">
+      </div>
+      <h6><b>BAGS</b></h6>
+    </a>
+    </div>
+
+    <div class="col-md-1">
+      <a (click)="filter('APPAREL')">
+      <div class="card card-3">        
+      </div>
+      <h6><b>APPAREL</b></h6>
+      </a>
+    </div>
+
+    <div class="col-md-1">
+      <a (click)="filter('JEWELRY')">
+      <div class="card card-4">
+      </div>
+      <h6><b>JEWELRY</b></h6>
+      </a>
+    </div>
+
+    <div class="col-md-1">
+      <a (click)="filter('ACCESSORIES')">
+      <div class="card card-5">
+      </div>
+      <h6><b>ACCESSORIES</b></h6>
+      </a>
+    </div>
+
+  </div>
+</div>
+<!--END OF CATEGORY-->
+
+<div class = "instance" *ngFor = "let data of filterCategory | filter: searchKey: 'name' | filter: SearchBrand:'brand' | sort:[SortbyParam,SortDirection]">
   <app-dashboard-item [product] = "data"
-  (addtocartEmitter) = "executeAddtoCart(data)">
+  (addtocartEmitter) = "executeAddtoCart(data)"
+  (priceEmitter) = "onSortDirection()">
   </app-dashboard-item>
 </div>
 

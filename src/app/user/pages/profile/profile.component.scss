@@ -12,9 +12,11 @@ body {
     border: none;
     cursor: pointer;
     transition: all 0.5s;
-    left: -250px;
+    left: -755px;
     display: flex;
     align-items: flex-start;
+    // background-color: #ccc;
+    box-shadow: none !important;
 }
 
 .image img {
@@ -99,8 +101,9 @@ input {
 
 mat-card {
   box-shadow: none !important;
+  position: absolute;
   margin-left: 230px;
-  margin-top: 45px;
+  margin-top: 50px;
 }
 // mat-form-field-appearance-outline {
 //   padding: 0em;

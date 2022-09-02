@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { Products } from 'src/app/user/models/products';
 import { UserService } from 'src/app/user/services/user.service';
 import { SharedService } from '../shared.service';
 
@@ -11,6 +12,9 @@ import { SharedService } from '../shared.service';
 export class NavBarComponent implements OnInit {
   public searchTerm !: string;
   public totalItem : number = 0;
+ 
+  @Input() product : Products | undefined;
+  @Output() priceEmitter = new EventEmitter();
 
   constructor(private userService: UserService,
               public sharedService : SharedService,
@@ -33,6 +37,10 @@ export class NavBarComponent implements OnInit {
     .subscribe(cart => {
       this.totalItem = cart.length;
     })
+  }
+
+  pricefilter() {
+    this.priceEmitter.emit(this.product);
   }
 
   logout(){

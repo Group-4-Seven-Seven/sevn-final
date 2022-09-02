@@ -23,11 +23,13 @@ export class CartComponent implements OnInit {
   public product: Products[] = [];
   public grandTotal: number = 0;
  
-  constructor(private userService : UserService, private router : Router,
+  constructor(private userService : UserService,
+    private router : Router,
     private sharedService : SharedService) { }
 
   ngOnInit(): void {
     this.sharedService.show();
+    
     this.userService.getCartData().subscribe((data) =>{
     this.cartData = data
     this.cartOrder = this.cartData.carts

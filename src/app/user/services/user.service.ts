@@ -30,6 +30,7 @@ export class UserService {
 
   constructor(private http: HttpClient, private router : Router) { }
   userID = localStorage.getItem('userID')
+  
   getProductItem(): Observable<Products[]> {
   return this.http.get<Products[]>(this.productsurl);
   }
