@@ -31,3 +31,86 @@
 .filter {
     margin-top: 100px; 
 }
+
+
+///////////////////FOR CATEGORY////////////////////
+body{
+    font-family: 'Nunito', sans-serif;
+    padding: 50px;
+  }
+  .card{
+    display: grid;
+      border-radius: 4px;
+      background: #fff;
+      box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+        transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+    cursor: pointer;
+    width: 75px;
+    height: 75px;
+  }
+  
+  .card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+  }
+  
+  .card h3{
+    font-weight: 600;
+  }
+  
+  .card img{
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    max-height: 120px;
+  }
+  
+  .card-1{
+    background-image: url(https://tse3.mm.bing.net/th?id=OIP.DHYB7YezXSZStNVO9smKbQHaHa&pid=Api&P=0);
+        background-repeat: no-repeat;
+      background-position: center;
+      object-fit: fill;
+      background-size: 80px;
+  }
+  
+  .card-2{
+     background-image: url(https://tse4.mm.bing.net/th?id=OIP.TLbyX4_8eMU5d3QA3SBgLgHaHa&pid=Api&P=0);
+     background-repeat: no-repeat;
+     background-position: center;
+     object-fit: cover;
+     background-size: 80px;
+  }
+  
+  .card-3{
+     background-image: url(https://cdn.lifestyleasia.com/wp-content/uploads/sites/6/2020/06/12172939/burberry-ss20.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 120px;
+  }
+
+  .card-4{
+       background-image: url(https://tse1.mm.bing.net/th?id=OIP.jAzxNNc5ZLchgSi4xXOSlQHaHa&pid=Api&P=0);
+       background-repeat: no-repeat;
+       background-position: center;
+       background-size: 100px;
+ }
+
+ .card-5{
+    background-image: url(https://cdna.lystit.com/photos/zapposcouture/89e6b139/versace-navygrey-Baroque-Print-Cap.jpeg);
+       background-repeat: no-repeat;
+       background-position: center;
+     background-size: 70px;
+ }
+  
+  @media(max-width: 990px){
+    .card{
+      margin: 20px;
+    }
+  } 
+
+  h6 {
+    display: flex;
+    font-family: Garamond, serif;
+    text-align: center;
+    justify-content: center;
+  }

@@ -18,6 +18,7 @@
             </div>
           </div>
         </form>
+        <span class="navbar-brand">S E V N</span>
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
           <!-- Messages Dropdown Menu -->
@@ -131,81 +132,60 @@
           <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <li class="nav-item has-treeview menu-open">
-                <a href="#" class="nav-link active">
+                <a routerLink="home" class="nav-link active">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                     Dashboard
                   </p>
                 </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link active">
-                        <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                      <p>  Admin Dashboard</p>
-                    </a>
-                  </li>
-                
-                </ul>
               </li>
               <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-book"></i>
                   <p>
                     Pages
-                    <i class="fas fa-angle-left right"></i>
+                    <i class="fa fa-angle-down"></i>
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a (click)="adminDash()" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Top 5 Selling Items</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a (click)="adminProd()" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Products</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a (click)="admin()" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Users</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a (click)="profile()" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Profile</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a (click)="user()" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>User Dashboard</p>
                     </a>
                   </li>
-                  <!-- <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Project Add</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Project Edit</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Project Detail</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Contacts</p>
-                    </a>
-                  </li> -->
                 </ul>
               </li>
+            <li>
+              <a (click)="logout()" class="nav-link active">
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+              <p>Log Out</p>
+              </a>
+            </li>
             </ul>
           </nav>
           <!-- /.sidebar-menu -->
@@ -246,7 +226,7 @@
                   <div class="icon">
                     <i class="ion ion-stats-bars"></i>
                   </div>
-                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a (click)="adminDash()" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <!-- ./col -->
@@ -260,7 +240,7 @@
                   <div class="icon"> 
                     <i class="ion ion-bag"></i>
                   </div>
-                  <a routerLink="/admin" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a (click)="userOrder()" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <!-- ./col -->
@@ -274,7 +254,7 @@
                   <div class="icon">
                     <i class="ion ion-person-add"></i>
                   </div>
-                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a (click)="admin()" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <!-- ./col -->
@@ -288,7 +268,7 @@
                   <div class="icon">
                     <i class="ion ion-pie-graph"></i>
                   </div>
-                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a (click)="adminProd()" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <!-- ./col -->

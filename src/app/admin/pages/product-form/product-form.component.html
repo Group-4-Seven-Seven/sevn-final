@@ -1,29 +1,50 @@
-<p>product-form works!</p>
-
 <form [formGroup] = "productForm" (ngSubmit) = "submit()">
-    <div>
-        <input type="text" placeholder="Name" formControlName = "name">
-    </div>
-    <div>
-        <input type="text" placeholder="Brand" formControlName = "brand">
-    </div>
-    <div>
-        <input type="text" placeholder="Gender" formControlName = "gender">
-    </div>
-    <div>
-        <input type="text" placeholder="Category" formControlName = "category">
-    </div>
-    <div>
-        <input type="number" placeholder="Price" formControlName = "price">
-    </div>
-    <div>
-        <input type="number" placeholder="Inventory" formControlName = "items_left">
-    </div>
-    <div>
-        <input type="text" placeholder="Image URL" formControlName = "imageURL">
-    </div>
-    <div>
-        <button (click) = "submit()">Submit</button>
-    </div>
-   
+
+    <mat-card class="form" style = "background-color: #e5e4e2;">
+        <mat-card-header>
+        <mat-card-title style="justify-content: center"><i class="fa fa-plus-circle" font-size = "30px"></i> Add or Edit a S E V N Product</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            
+            <mat-form-field class="form-group" >
+                <input matInput placeholder="Name" formControlName = "name" class ="form-control">
+            </mat-form-field>
+    
+            <mat-form-field class="form-group">
+            <input matInput placeholder="Brand" formControlName = "brand" class ="form-control">
+            </mat-form-field>
+            
+            <mat-form-field class="form-group" >
+            <input matInput placeholder="Gender" formControlName = "gender" class ="form-control">
+            </mat-form-field>
+
+            <mat-form-field class="form-group" >
+            <input matInput placeholder="Category" formControlName = "category" class ="form-control">
+            </mat-form-field>
+
+            <mat-form-field class="form-group" >
+            <input matInput placeholder="Price" formControlName = "price" class ="form-control">
+            </mat-form-field>
+
+            <mat-form-field class="form-group">
+            <input matInput placeholder="Inventory" formControlName = "items_left" class ="form-control">
+            </mat-form-field>
+
+            <mat-form-field class="form-group">
+            <input matInput placeholder="Image URL" formControlName = "imageURL" class ="form-control">
+             </mat-form-field>
+            
+            <mat-card-actions style="display: inline; margin-left: 150px;" >
+            <button  mat-button color="black" (click) = "submit()"><a> SUBMIT
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+            </a></button>
+            </mat-card-actions>
+
+            <mat-card-actions style="display: inline; justify-content: right; margin-left: 220px;">
+            <button  mat-button color="black" routerLink="/admin/product"><a>Back to Product Dashboard 
+                <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> </a></button>
+            </mat-card-actions>
+
+    </mat-card-content>
+    </mat-card>
 </form>

@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit {
   SortDirection = 'asc';
   cartData : any;
   cartOrder : any[] = [];
+  public filterCategory : any;
 
   tiles: Tile[] = [
     {text: 'One', cols: 3, rows: 2, color: 'lightblue'},
@@ -50,6 +51,7 @@ export class DashboardComponent implements OnInit {
     this.userService.getProductItem().subscribe(products => {
       this.products = products
       // console.log(this.products);
+      this.filterCategory = products;
 
       //FUNCTION TO ADD QUANTITY AND TOTAL TO PRODUCT
       this.products.forEach((x: any) => {
@@ -74,6 +76,15 @@ export class DashboardComponent implements OnInit {
     } else {
       this.SortDirection = 'desc';
     }
+  }
+
+  filter(category:any) {
+    this.filterCategory = this.products
+    .filter((a:any) => {
+      if(a.category == category || category ==""){
+        return a;
+      }
+    })
   }
   
   //END OF FILTER FUNCTIONS

@@ -15,6 +15,7 @@ import { MaterialDesignModule } from '../material-design.module';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomepageModule } from '../homepage/homepage.module';
 
 
 
@@ -37,7 +38,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MaterialDesignModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HomepageModule
   ],
   exports :[
      DashboardComponent,

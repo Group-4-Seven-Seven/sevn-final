@@ -11,6 +11,7 @@ import { ProductFormComponent } from './pages/product-form/product-form.componen
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialDesignModule } from '../material-design.module';
+import { HomepageModule } from '../homepage/homepage.module';
 
 
 
@@ -30,7 +31,8 @@ import { MaterialDesignModule } from '../material-design.module';
     AdminRoutingModule,
     ReactiveFormsModule,
     SharedModule,
-    MaterialDesignModule
+    MaterialDesignModule,
+    HomepageModule
     
   ],
   exports:[
