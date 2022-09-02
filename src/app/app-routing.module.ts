@@ -27,16 +27,18 @@ const routes : Routes = [
   {
     path: "user",
     loadChildren: () => import("./user/user.module").then(m => m.UserModule),
-    // canActivate: [AuthGuard, UserRoleGuard]
+    canActivate: [AuthGuard, UserRoleGuard]
   },
   {
     path : "admin",
     loadChildren: () => import("./admin/admin.module").then(m => m.AdminModule),
-    // canActivate: [AuthGuard, RoleGuard]
+     canActivate: [AuthGuard, RoleGuard]
   },
   {
     path: "home",
-    component: MainhomeComponent
+    component: MainhomeComponent,
+    canActivate: [AuthGuard, RoleGuard]
+
   },
   {path: '**',
    component: PageNotFoundComponent
